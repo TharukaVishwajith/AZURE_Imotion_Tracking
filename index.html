@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <style type="text/css">
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
+  </style>
+  <script type="text/javascript" src="js/webcam.min.js"></script>
+  <script type="text/javascript" src="js/webcam.js"></script>
+  <script type="text/javascript" src="js/barchart.js"></script>
+  <script type="text/javascript" src="js/searchvideos.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script type="text/javascript">
+  function load() {
+    drawChart0();
+    ShowCam()
+  }
+</script>
+</head>
+<body onload="load()">
+ 
+ <div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="container" id="Cam"><b>Webcam Preview...</b>
+    <div class="footer"><div id="my_camera"></div><form></div>
+</div>
+    </div>
+    <div class="col-xs-4">
+      <div class="container" id="Prev">
+    <div class="footer"><b>Snap Preview...</b><div id="results"></div></div>
+</div>
+    </div>
+    <div class="col-xs-4">
+       <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5">
+      <input class="btn btn-success" type="button" value="Snap It" onClick="analyze()"/>
+    </div>
+    <div class="col-xs-6">
+      <div class="container" id="Saved">
+        <div class="footer"><b>Task : </b><span id="loading"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+
+ 
+
+<center><div id="container">
+<input class="btn btn-primary" type="button" value="Search" onClick="search()"/>
+<br>
+<div id="content"> </div>
+
+</div>
+
+</center> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" id="Saved"  style=" display: none;">
+    <div id="chart" class="chart">
+    <p>Anger : <span id="anger"></span></p>
+    <p>Contempt : <span id="contempt"></span></p>
+    <p>Disgust : <span id="disgust"></span></p>
+    <p>Fear : <span id="fear"></span></p>
+    <p>Happiness : <span id="happiness"></span></p>
+    <p>Neutral : <span id="neutral"></span></p>
+    <p>Sadness : <span id="sadness"></span></p>
+    <p>Surprise : <span id="surprise"></span></p>
+</div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+  function analyze(){
+    take_snapshot();
+    SaveSnap();
+  }
+</script>
+<script type="text/javascript" src="js/base64-binary.js"></script>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/canvasjs.min.js"></script>
+<script src = "js/jquery-1.12.4.js"></script>
+<script src = "js/bootstrap.js"></script>
+</body>
+</html>
